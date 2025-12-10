@@ -11,8 +11,8 @@ topics:
   - alice
 
 environment:
-  sdk: ">=3.7.0 <4.0.0"
-  flutter: ">=3.29.0"
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
 
 dependencies:
   alice: ^1.0.0
@@ -22,7 +22,7 @@ dependencies:
 
 dev_dependencies:
   flutter_lints: ^5.0.0
-  test: ^1.25.15
+  test: ^1.25.7
   mocktail: ^1.0.4
   http_mock_adapter: ^0.6.1
   alice_test: ^1.0.1

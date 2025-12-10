@@ -6,8 +6,10 @@ packages:
 scripts:
   analyze:
     exec: dart analyze .
+  get:
+    exec: dart analyze .
   fix:
-    exec: dart fix --apply
+    exec: flutter pub get .
   format:
     exec: dart format .
   test:
