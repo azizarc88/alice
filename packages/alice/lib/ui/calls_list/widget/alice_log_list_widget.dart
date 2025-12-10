@@ -153,29 +153,29 @@ class _AliceLogEntryWidget extends StatelessWidget {
 
   /// Returns icon based on log level.
   IconData _getLogIcon(DiagnosticLevel level) => switch (level) {
-    DiagnosticLevel.hidden => Icons.all_inclusive_outlined,
-    DiagnosticLevel.fine => Icons.bubble_chart_outlined,
-    DiagnosticLevel.debug => Icons.bug_report_outlined,
-    DiagnosticLevel.info => Icons.info_outline,
-    DiagnosticLevel.warning => Icons.warning_outlined,
-    DiagnosticLevel.hint => Icons.privacy_tip_outlined,
-    DiagnosticLevel.summary => Icons.subject,
-    DiagnosticLevel.error => Icons.error_outlined,
-    DiagnosticLevel.off => Icons.not_interested_outlined,
-  };
+        DiagnosticLevel.hidden => Icons.all_inclusive_outlined,
+        DiagnosticLevel.fine => Icons.bubble_chart_outlined,
+        DiagnosticLevel.debug => Icons.bug_report_outlined,
+        DiagnosticLevel.info => Icons.info_outline,
+        DiagnosticLevel.warning => Icons.warning_outlined,
+        DiagnosticLevel.hint => Icons.privacy_tip_outlined,
+        DiagnosticLevel.summary => Icons.subject,
+        DiagnosticLevel.error => Icons.error_outlined,
+        DiagnosticLevel.off => Icons.not_interested_outlined,
+      };
 
   /// Copies to clipboard given error.
   Future<void> _copyToClipboard(BuildContext context) async {
     final String? error = _stringify(log.error);
     final String? stackTrace = _stringify(log.stackTrace);
-    final StringBuffer text =
-        StringBuffer()..writeAll([
-          '${log.timestamp}: ${log.message}\n',
-          if (error != null)
-            '${context.i18n(AliceTranslationKey.logsItemError)} $error\n',
-          if (stackTrace != null)
-            '${context.i18n(AliceTranslationKey.logsItemStackTrace)}: $stackTrace\n',
-        ]);
+    final StringBuffer text = StringBuffer()
+      ..writeAll([
+        '${log.timestamp}: ${log.message}\n',
+        if (error != null)
+          '${context.i18n(AliceTranslationKey.logsItemError)} $error\n',
+        if (stackTrace != null)
+          '${context.i18n(AliceTranslationKey.logsItemStackTrace)}: $stackTrace\n',
+      ]);
 
     await Clipboard.setData(ClipboardData(text: text.toString()));
 
